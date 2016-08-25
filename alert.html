@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>alert插件</title>
+		<script type="text/javascript" src="public/bootstrap/js/jquery-1.11.3.js"></script>
+		<script>
+			$.fn.alert=function(){
+				console.log('我是旧方法')
+			}
+		</script>
+		<script type="text/javascript" src="js/alert.js"></script>
+		<script type="text/javascript" src="js/disabled.js"></script>
+	</head>
+	<body>
+		<div class="alert">
+			12345678
+			<button data-dismiss="alert">X</button>
+		</div>
+		<div class="alert">
+			12345678
+			<button data-dismiss="alert">X</button>
+		</div>
+		<div id="mydiv" style="width: 200px;height: 200px;background: red;">123</div>
+		<script>
+			$('.alert').alert();
+			console.log($('.alert').alert.Constructor);
+			$('.alert').alert();
+			$("button").disable();
+			$("#mydiv").css("opacity",function(){
+				for(var i=0;i<=1;){
+					i=i+0.1;
+					return $(this).opacity=i;
+				}
+			});
+		</script>
+	</body>
+</html>
